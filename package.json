@@ -1,0 +1,26 @@
+{
+  "name": "promiseme",
+  "version": "1.0.0",
+  "description": "Promise library written by the node meetup in Auckland",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel/register --recursive specs && standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jladuval/promiseme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jladuval/promiseme/issues"
+  },
+  "homepage": "https://github.com/jladuval/promiseme#readme",
+  "devDependencies": {
+    "babel": "^5.8.19",
+    "babel-eslint": "^4.0.5",
+    "chai": "^3.2.0",
+    "mocha": "^2.2.5",
+    "standard": "^4.5.4"
+  }
+}
