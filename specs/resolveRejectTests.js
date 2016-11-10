@@ -72,6 +72,7 @@ describe('When a promise is fulfilled', () => {
     })
       .then(function onSuccess (value) {
         expect(value).to.exist
+        expect(value).to.equal('Hello value')
       })
   })
 
@@ -82,7 +83,15 @@ describe('When a promise is fulfilled', () => {
 
 describe('When a promise is rejected', () => {
   it('The promise must give a reason', () => {
-    throw Error("Unimplemented")
+    new PromiseMe((resolve, reject) => {
+
+      reject('This has failed')
+    })
+      .then(function onSuccess (value) {
+        throw new Error('nope')
+      }, function onError(value) {
+        expect(value).to.equal('This has failed')
+      })
   })
 
   it('The promise must not change state after being fulfilled', () => {
